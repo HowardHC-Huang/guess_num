@@ -7,12 +7,14 @@
 #延伸2: 使用者決定隨機數範圍
 
 import random
+rand_min = int(input('請決定隨機數的最小值:'))	#延伸2
+rand_max = int(input('請決定隨機數的最大值:'))
 
-answer = random.randint(1, 100)
+answer = random.randint(rand_min, rand_max)
 reply = int(input('請猜一個0~100的整數\n'))
-count = 0		#記錄次數要寫在循環外面
+count = 0		#延伸1:記錄次數要寫在循環外面
 while True:
-	#count = 1    [重要!!!]記錄使用者次數如果寫在循環裡面,會每次都歸零,吃龜苓膏...
+	#count = 0    [重要!!!]記錄次數如果寫在循環裡面,會每次都歸零,吃龜苓膏...
 	count = count + 1
 	if reply == answer:
 		print('終於猜對了!')
